@@ -198,3 +198,11 @@ function setLoading(loading) {
         buttons[i].disabled = loading;
     }
 }
+// Add a square root button function sqrtPressed() {
+//     var value = getValue();
+//     if (value >= 0) {
+//         setValue(Math.sqrt(value));
+//     } else {
+//         setError();
+//     }
+// }    

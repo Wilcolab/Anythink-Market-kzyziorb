@@ -113,6 +113,28 @@ describe('Arithmetic', function () {
                     done();
                 });
         });
+        // Power function tests
+describe('Power', function () {
+  it('raises a number to a positive exponent', function (done) {
+    request
+      .get('/arithmetic?operation=power&operand1=2&operand2=3')
+      .expect(200)
+      .expect(function (res) {
+        expect(res.body).to.eql({ result: 8 });
+      })
+      .end(done);
+  });
+
+  it('raises a number to a negative exponent', function (done) {
+    request
+      .get('/arithmetic?operation=power&operand1=2&operand2=-2')
+      .expect(200)
+      .expect(function (res) {
+        expect(res.body).to.eql({ result: 0.25 });
+      })
+      .end(done);
+  });
+});
         it('multiplies a positive integer and negative integer', function (done) {
             request.get('/arithmetic?operation=multiply&operand1=21&operand2=-2')
                 .expect(200)
